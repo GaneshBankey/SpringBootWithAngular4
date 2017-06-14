@@ -1,0 +1,9 @@
+/servicecloud/target
+/servicecloud/.apt_generated
+/servicecloud/.settings
+/servicecloud/.classpath
+/servicecloud/.factorypath
+/servicecloud/.project
+/webcloud-ui/target
+/webcloud-ui/.settings
+/webcloud-ui/dist

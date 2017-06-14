@@ -1,0 +1,26 @@
+<div class="col-sm-3 col-md-3">
+    <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" #stocksearch id="stocksearch" (keyup)="searchStockTicker(stocksearch.value)" />
+            <div class="input-group-btn">
+                <button class="btn btn-default" (click)="searchStockTicker(stocksearch.value)"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        <div id="searchResults">So much results...</div>
+    <div *ngIf="securities | async; else loading">
+        <ul class="list-group">
+            <li class="list-group-item"  *ngFor="let security of securities | async">{{security.security_name}}</li>            
+        </ul>
+    </div>
+    <ng-template #loading >
+        <ul class="list-group" *ngIf="isLoading">
+            <li class="list-group-item">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </li>            
+        </ul>
+    </ng-template>
+
+        
+    </form>
+</div>

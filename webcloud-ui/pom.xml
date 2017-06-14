@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cloud.poc</groupId>
+		<artifactId>SpringWebCloud</artifactId>
+        <version>1.1</version>
+    </parent>
+    <artifactId>webcloud-ui</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Angular2 UI</name>
+	<build>
+		<resources>
+		  <resource>
+			<directory>dist</directory>
+			<includes>
+			  <include>**/*.*</include>
+			</includes>
+		  </resource>
+		</resources>
+		<plugins>
+		    <plugin>
+		         <!-- Build the front end -->
+		         <groupId>org.codehaus.mojo</groupId>
+		         <artifactId>exec-maven-plugin</artifactId>
+		         <version>1.4.0</version>
+		         <executions>
+		            <execution>
+		               <phase>generate-resources</phase>
+		               <goals>
+		                  <goal>exec</goal>
+		               </goals>
+		            </execution>
+		         </executions>
+		         <configuration>
+		            <executable>npm</executable>
+		            <arguments>
+		               <argument>run</argument>
+		               <argument>build</argument>
+		            </arguments>
+		            <workingDirectory>.</workingDirectory>
+		         </configuration>
+		    </plugin>
+		  </plugins>
+	</build>
+  
+</project>

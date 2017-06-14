@@ -1,0 +1,13 @@
+.stockSearchList
+{
+    position: absolute;
+    width: auto; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid gray;
+    /*This is relative to the navbar now*/
+    left: 0;
+    right: 0;
+}
